@@ -12,7 +12,7 @@ import com.wolfk.service.UserTestService;
 /**
  * @author Redfield
  *
- * @date 2019Äê7ÔÂ4ÈÕ
+ * @date 2019Ã„Ãª7Ã”Ã‚4ÃˆÃ•
  */
 @Controller
 public class Test {
@@ -22,7 +22,7 @@ public class Test {
 		super();
 		this.userTestService = userTestService;
 	}
-
+	//selectAllUserInformation
 	@RequestMapping("showUsersTest")
 	@ResponseBody
 	public List<UserTestPojo> showUsersTest() {
