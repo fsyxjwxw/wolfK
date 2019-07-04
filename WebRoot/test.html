@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<script type="text/javascript">
+	
+		function showUsers(){
+		//alert("123");
+			$.ajax({
+				url : "showUsersTest.action",
+				type : "post",
+				success : function(response,status,obj){
+					//alert("success");
+					$("#show").html("");
+					
+					var s="";
+					
+					for(var i=0;i<response.length;i++){
+						var c = response[i];
+						s = s + "<tr>"
+						+"<td>" + c.username +"</td>"
+						+"<td>" + c.password +"</td>"
+						+"</tr>"
+					}
+					$("#show").append(s);
+					
+				},
+				error : function(response,status,obj){
+					alert("error");
+				}
+			
+			});
+		
+		}
+	
+	</script>
+	<style type="text/css">
+		#show_div{
+			width:400px;
+			height:400px;
+			border:1px solid red;
+		}
+	</style>
+  </head>
+  
+  <body>
+    	<input type="button" value="start" onclick="showUsers()"  />
+    	<div id="show_div">
+    		<table>
+    			<tbody id="show">
+    			</tbody>
+    		</table>
+    	</div>
+    	
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        "
+	default-autowire="byName">
+
+	<!-- 自动加载注解适配器 -->
+	<mvc:annotation-driven>
+		<!--  <mvc:message-converters
+			register-defaults="true">
+			<bean id="stringHttpMessageConverter"
+				class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes"
+					value="application/json;charset=UTF-8" />
+			</bean>
+		</mvc:message-converters>-->
+	</mvc:annotation-driven>
+
+	<!-- 扫描器 自动加载所有注解controller -->
+	<context:component-scan
+		base-package="com.wolfk.controller"></context:component-scan>
+
+	<!-- 拦截器的配置 -->
+	<!-- <mvc:interceptors> <mvc:interceptor> <mvc:mapping path="/**"/> <bean 
+		class="com.redfield.interceptor.LoginInterceptor"></bean> </mvc:interceptor> 
+		</mvc:interceptors> -->
+
+
+</beans>
