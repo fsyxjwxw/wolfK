@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+	<title>ChooseRoom</title>
+	<link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+	<div class="lowin">
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+					<h2 style="width: 100%;height: 100%;text-align: center;">选择房间</h2>
+					<div style="width: 100%;height: 30px; ">&nbsp;&nbsp;&nbsp;&nbsp;
+					206号房<input type="button" onclick="enterRoom('206')" value="进入" style="float: right;margin-right: 20px">
+					</div>
+					<div style="width: 100%;height: 30px; ">&nbsp;&nbsp;&nbsp;&nbsp;
+					208号房<input type="button" onclick="enterRoom('208')" value="进入" style="float: right;margin-right: 20px">
+					</div>
+					<div style="width: 100%;height: 30px; ">&nbsp;&nbsp;&nbsp;&nbsp;
+					223号房<input type="button" onclick="enterRoom('223')" value="进入" style="float: right;margin-right: 20px">
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		
+	</div>
+	<script type="text/javascript">
+		function enterRoom(x){
+			alert(x);
+		}
+	</script>
+	<script src="js/auth.js"></script>
+	<script>
+		Auth.init({
+			login_url: '#login',
+			forgot_url: '#forgot'
+		});
+	</script>
+</body>
+</html>
